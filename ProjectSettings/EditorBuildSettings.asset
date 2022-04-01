@@ -4,5 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Project/Scenes/TableScene.unity
+    guid: 193462eeea9c1604c9646634496dbfee
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: ca6a3d3258e14204da745407ea265ba4, type: 2}
