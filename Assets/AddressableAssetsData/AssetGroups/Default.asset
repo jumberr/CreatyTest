@@ -16,19 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e0f79eafc71d1f9439df43f5bcc790f9
-  m_SerializeEntries:
-  - m_GUID: 36efd47827f9298479315e70b7d64b05
-    m_Address: MenuWindow
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 1a38bba5030ae384bb0dc10d791562ba
-    m_Address: TableWindow
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: f5ecdf8bc5f7111478e494136fcec28f
-    m_Address: UIRoot
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c041e6f0f42899846a7b8fdba5fce75d, type: 2}
   m_SchemaSet:

@@ -31,27 +31,37 @@ namespace _Project.CodeBase.UI.Services
             _uiRoot = uiRoot.transform;
         }
 
-        public void CreateMenuWindow()
+        public MenuWindow CreateMenuWindow()
         {
             var prefab = _staticDataService.ForWindow(WindowId.Menu).Prefab;
             _menuWindow = Object.Instantiate(prefab, _uiRoot) as MenuWindow;
+            return _menuWindow;
         }
         
-        public void CreateTableWindow()
+        public TableWindow CreateTableWindow()
         {
             var prefab = _staticDataService.ForWindow(WindowId.Table).Prefab;
             _tableWindow = Object.Instantiate(prefab, _uiRoot) as TableWindow;
+            return _tableWindow;
         }
 
-        public void OpenMenuWindow() => 
-            _menuWindow.gameObject.SetActive(true);
-
-        public void OpenTableWindow() => 
-            _tableWindow.gameObject.SetActive(true);
-
-        public void SetupWindowButtons(IWindowService windowService, GameObject hud)
+        public void OpenMenuWindow()
         {
-            foreach (var button in hud.GetComponentsInChildren<OpenWindowButton>()) 
+            _menuWindow.gameObject.SetActive(true);
+            _tableWindow.gameObject.SetActive(false);
+        }
+
+        public void OpenTableWindow()
+        {
+            if (!_menuWindow.GenerateTable(out var value)) return;
+            _tableWindow.gameObject.SetActive(true);
+            _menuWindow.gameObject.SetActive(false);
+            _tableWindow.Setup(value);
+        }
+
+        public void SetupWindowButtons(IWindowService windowService)
+        {
+            foreach (var button in _uiRoot.GetComponentsInChildren<OpenWindowButton>()) 
                 button.Construct(windowService);
         }
     }

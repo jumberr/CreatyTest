@@ -13,8 +13,11 @@ namespace _Project.CodeBase.UI.Elements
         public void Construct(IWindowService windowService) => 
             _windowService = windowService;
 
-        private void Awake() =>
+        private void OnEnable() =>
             Button.onClick.AddListener(Open);
+
+        private void OnDisable() => 
+            Button.onClick.RemoveListener(Open);
 
         private void Open() => 
             _windowService.Open(WindowId);

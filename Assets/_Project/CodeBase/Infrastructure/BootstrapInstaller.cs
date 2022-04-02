@@ -1,5 +1,4 @@
 using _Project.CodeBase.Infrastructure.AssetManagement;
-using _Project.CodeBase.Infrastructure.Factory;
 using _Project.CodeBase.Infrastructure.States;
 using _Project.CodeBase.Infrastructure.StaticData;
 using _Project.CodeBase.UI.Services;
@@ -56,12 +55,7 @@ namespace _Project.CodeBase.Infrastructure
                 .Bind<IWindowService>()
                 .To<WindowService>()
                 .AsSingle();
-            
-            Container
-                .Bind<IGameFactory>()
-                .To<GameFactory>()
-                .AsSingle();
-            
+
             Container
                 .Bind<IUIFactory>()
                 .To<UIFactory>()

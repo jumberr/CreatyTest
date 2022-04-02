@@ -16,8 +16,11 @@ namespace _Project.CodeBase.UI.Windows
             SubscribeUpdates();
         }
 
-        protected virtual void OnDisable() => 
+        protected virtual void OnDisable()
+        {
             UnSubscribeUpdates();
+            Cleanup();
+        }
 
         private void OnDestroy() => 
             Cleanup();

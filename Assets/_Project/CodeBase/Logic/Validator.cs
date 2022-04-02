@@ -5,9 +5,9 @@
         public bool Validate(string text, out int num)
         {
             num = 0;
-            if (!int.TryParse(text, out var number)) return false;
-            if (number <= 0 || number % 2 != 0) return false;
-            num = number;
+            if (!int.TryParse(text, out var x)) return false;
+            if (x < 2 || (x & (x - 1)) != 0) return false;
+            num = x;
             return true;
         }
     }

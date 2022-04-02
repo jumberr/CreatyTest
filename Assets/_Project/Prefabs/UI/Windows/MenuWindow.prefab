@@ -33,10 +33,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6857899953548979023
 MonoBehaviour:
@@ -51,11 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloseButton: {fileID: 0}
-  _table: {fileID: 0}
-  _parent: {fileID: 0}
-  _playerInput: {fileID: 0}
-  _startButton: {fileID: 0}
-  _error: {fileID: 0}
+  _playerInput: {fileID: 4969275440665221257}
+  _error: {fileID: 4969275439994255146}
 --- !u!1 &4969275439488633786
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,10 +576,10 @@ RectTransform:
   m_Father: {fileID: 6132703813332053289}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4969275440666388335
 MonoBehaviour:
@@ -931,10 +928,10 @@ RectTransform:
   m_Father: {fileID: 6132703813332053289}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4969275441051445170
 CanvasRenderer:
@@ -987,6 +984,7 @@ GameObject:
   - component: {fileID: 4969275441250502108}
   - component: {fileID: 4969275441250502107}
   - component: {fileID: 4969275441250502106}
+  - component: {fileID: 6401235235671354477}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -1111,6 +1109,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
+--- !u!114 &6401235235671354477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4969275441250502104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e69f8de7d1bf45b7a23336fab9dc6bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 4969275441250502107}
+  WindowId: 2
 --- !u!1 &4969275441288940894
 GameObject:
   m_ObjectHideFlags: 0
