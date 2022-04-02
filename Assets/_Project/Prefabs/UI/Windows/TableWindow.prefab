@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2323086411858489817}
   - component: {fileID: 8646885917391404468}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background_image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 5663149235425427145}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2323086411858489817
 CanvasRenderer:
@@ -106,10 +106,10 @@ RectTransform:
   m_Father: {fileID: 5663149235425427145}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &489735875101020295
 MonoBehaviour:
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 3445428260620257974}
   - component: {fileID: 5929643320889471316}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: Back_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,10 +441,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7606249671735671208
 MonoBehaviour:
@@ -462,4 +462,4 @@ MonoBehaviour:
   _boardParent: {fileID: 5781717623975019282}
   _bigContainer: {fileID: 4903794688720939831, guid: 2876ae46281535f4f83d6e81314863f4, type: 3}
   _smallContainer: {fileID: 8241238699744994128, guid: 38e21afd7eb4d304fb8e49325be77efb, type: 3}
-  _cell: {fileID: 3150863620280653654, guid: b63b5ef48efaf2748a4eb599175d721a, type: 3}
+  _cellViewPrefab: {fileID: 3150863620280653654, guid: b63b5ef48efaf2748a4eb599175d721a, type: 3}

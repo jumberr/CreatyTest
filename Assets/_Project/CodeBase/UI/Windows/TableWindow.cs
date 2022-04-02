@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using _Project.CodeBase.Logic.Core;
 using _Project.CodeBase.UI.Elements;
 using UnityEngine;
 
@@ -9,9 +11,9 @@ namespace _Project.CodeBase.UI.Windows
         [SerializeField] private Transform _boardParent;
         [SerializeField] private GameObject _bigContainer;
         [SerializeField] private GameObject _smallContainer;
-        [SerializeField] private Cell _cell;
-        
-        private readonly List<List<Cell>> _cells = new List<List<Cell>>();
+        [SerializeField] private CellView _cellViewPrefab;
+
+        private IBoard _board;
         private GameObject _leftHalf;
         private GameObject _rightHalf;
         
@@ -27,62 +29,61 @@ namespace _Project.CodeBase.UI.Windows
 
         protected override void OnDisable()
         {
+            _board?.CleanUp();
             Destroy(_leftHalf);
             Destroy(_rightHalf);
-            _cells.Clear();
         }
 
         private void CreateCells(int players)
         {
-            var half = players / 2;
-            CreateLeftHalf(half);
-            CreateRightHalf(half);
+            _board = new Board(players);
+            
+            CreateLeftHalf(players);
+            CreateRightHalf(players);
         }
 
         private void CreateLeftHalf(int startValue)
         {
             _leftHalf = Instantiate(_bigContainer, _boardParent);
 
-            var index = startValue;
-            var tmpList = new List<List<Cell>>();
+            var i = 0;
+            var index = startValue / 2;
             while (index >= 1)
             {
-                var list = new List<Cell>();
-                var smallContainer = Instantiate(_smallContainer, _leftHalf.transform);
-                for (var i = index; i > 0; i--)
-                {
-                    var cell = Instantiate(_cell, smallContainer.transform);
-                    list.Add(cell);
-                }
-                
-                tmpList.Add(list);
+                InitializeCellColumn(index, i, _leftHalf.transform);
                 index /= 2;
+                i++;
             }
-
-            _cells.AddRange(tmpList);
         }
-        
-        private void CreateRightHalf(int endValue)
+
+        private void CreateRightHalf(int players)
         {
             _rightHalf = Instantiate(_bigContainer, _boardParent);
 
+            var i = (int)Math.Log(players, 2);
             var index = 1;
-            var tmpList = new List<List<Cell>>();
-            while (index <= endValue)
+            while (index <= players / 2)
             {
-                var list = new List<Cell>();
-                var smallContainer = Instantiate(_smallContainer, _rightHalf.transform);
-                for (var i = index; i > 0; i--)
-                {
-                    var cell = Instantiate(_cell, smallContainer.transform);
-                    list.Add(cell);
-                }
-                
-                tmpList.Add(list);
+                InitializeCellColumn(index, i, _rightHalf.transform);
                 index *= 2;
+                i++;
             }
+        }
 
-            _cells.AddRange(tmpList);
+        private void InitializeCellColumn(int index, int i, Transform bigContainer)
+        {
+            var list = new List<Cell>();
+            var smallContainer = Instantiate(_smallContainer, bigContainer);
+            for (int k = index, j = 0; k > 0; k--, j++)
+            {
+                var cellView = Instantiate(_cellViewPrefab, smallContainer.transform);
+                var cell = new Cell(_board, cellView, (i, j));
+
+                cellView.Construct(cell);
+                list.Add(cell);
+            }
+            
+            _board.AddList(list);
         }
     }
 }

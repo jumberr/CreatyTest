@@ -2,7 +2,7 @@
 {
     public class Validator
     {
-        public bool Validate(string text, out int num)
+        public static bool Validate(string text, out int num)
         {
             num = 0;
             if (!int.TryParse(text, out var x)) return false;
